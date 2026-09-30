@@ -1,0 +1,33 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+addopts = "--cov=src --cov-report=term-missing --cov-fail-under=70"
+
+[tool.black]
+line-length = 88
+target-version = ['py310', 'py311', 'py312']
+include = '\.pyi?$'
+[project]
+name = "pythonproject2"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Artur",email = "usmanov911@gmail.com"}
+]
+requires-python = ">=3.14"
+dependencies = [
+    "requests (>=2.34.2,<3.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "pytest-cov (>=7.1.0,<8.0.0)",
+    "black (>=26.5.1,<27.0.0)",
+    "flake8 (>=7.4.1,<8.0.0)"
+]
